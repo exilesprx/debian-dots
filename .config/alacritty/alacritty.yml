@@ -1,0 +1,7 @@
+import:
+  - ~/.config/alacritty/font.yml
+  #  - ~/.config/alacritty/onedark.yml
+  - ~/.config/alacritty/catppuccin-macchiato.yml
+
+window:
+  opacity: 0.9
