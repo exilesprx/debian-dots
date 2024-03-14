@@ -1,7 +1,9 @@
 import:
   - ~/.config/alacritty/font.yml
   #  - ~/.config/alacritty/onedark.yml
-  - ~/.config/alacritty/catppuccin-macchiato.yml
+  #  - ~/.config/alacritty/catppuccin-macchiato.yml
+  - ~/.config/alacritty/catppuccin-mocha.yml
 
 window:
   opacity: 0.9
+  blur: true

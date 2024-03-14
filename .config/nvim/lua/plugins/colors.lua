@@ -4,7 +4,7 @@ return {
     priority = 1,
     opts = {
       transparent_background = true,
-      flavour = "macchiato",
+      flavour = "mocha", -- frappe, macchiato, mocha
     },
   },
   {
