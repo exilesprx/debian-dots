@@ -8,6 +8,7 @@ return {
           hide_dotfiles = false,
         },
       },
+      popup_border_style = "rounded",
       window = {
         position = "float",
         mapping_options = {
