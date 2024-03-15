@@ -9,7 +9,11 @@ return {
         },
       },
       window = {
-        position = "current",
+        position = "float",
+        mapping_options = {
+          noremap = true,
+          nowait = true,
+        },
       },
     },
   },
