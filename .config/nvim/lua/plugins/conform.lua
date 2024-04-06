@@ -35,7 +35,7 @@ return {
         stdin = false,
       },
       prettier = {
-        prepend_args = { "--singe-attribute-per-line" },
+        prepend_args = { "--single-attribute-per-line" },
         command = "prettier",
         stdin = true,
       },
