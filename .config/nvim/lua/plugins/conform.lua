@@ -34,6 +34,11 @@ return {
         filetypes = { "php" },
         stdin = false,
       },
+      prettier = {
+        prepend_args = { "--singe-attribute-per-line" },
+        command = "prettier",
+        stdin = true,
+      },
     },
   },
 }
