@@ -15,7 +15,9 @@ export VISUAL="kate"
 export MANPAGER="nvim +Man!"
 
 # Ghcup
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+if [ -f "$HOME/.ghcup/env" ]; then
+  source "$HOME/.ghcup/env" # ghcup-env
+fi
 
 # Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=5000
