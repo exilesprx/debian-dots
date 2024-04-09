@@ -8,9 +8,6 @@ alias cat='batcat'
 alias git-curb='git rev-parse --abbrev-ref HEAD'
 alias cat='batcat'
 
-# Autojump
-source /usr/share/autojump/autojump.sh
-
 # Exports
 export TERM="xterm-256color"
 export EDITOR="nvim"
@@ -78,8 +75,12 @@ fi
 zplug load
 
 # Zig
-[ -f "/opt/zig/bin/zig" ] && PATH=$PATH:"/opt/zig/bin/"
+if [ -f "/opt/zig/bin/zig" ]; then
+  PATH=$PATH:"/opt/zig/bin/"
+fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Zoxide
+if [ -f "$HOME/.local/bin/zoxide" ]; then
+  PATH=$PATH:"$HOME/.local/bin/"
+  eval "$(zoxide init zsh)"
+fi
