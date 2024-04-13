@@ -4,6 +4,7 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "haskell",
         "html",
         "javascript",
         "json",
@@ -14,6 +15,7 @@ return {
         "python",
         "typescript",
         "vim",
+        "vue",
         "yaml",
         "zig",
       },
