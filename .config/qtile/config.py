@@ -194,7 +194,7 @@ def init_widgets_list():
     widgets = [
         widget.Spacer(length=5, background=colors[1]),
         widget.Image(
-            filename="/usr/share/pixmaps/archlinux-logo.png",
+            filename=f"{home_dir}/.config/qtile/logo.png",
             background=colors[1],
             margin=3,
             mouse_callbacks={
