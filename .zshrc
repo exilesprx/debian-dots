@@ -34,7 +34,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Starship
-eval "$(starship init zsh)"
+if [ -f /usr/local/bin/starship ]; then
+  eval "$(starship init zsh)"
+fi
 
 # SSH key
 env=~/.ssh/agent.env
@@ -75,11 +77,6 @@ if ! zplug check --verbose; then
     fi
 fi
 zplug load
-
-# Zig
-if [ -f "/opt/zig/bin/zig" ]; then
-  PATH=$PATH:"/opt/zig/bin/"
-fi
 
 # Zoxide
 if [ -f "$HOME/.local/bin/zoxide" ]; then
