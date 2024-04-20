@@ -99,7 +99,27 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "123456789"]
+group_labels = ["", "", "", "", "", "", "", "", ""]
+group_class_matches = [
+    ["Alacritty"],
+    ["Firefox", "Chrome", "Brave"],
+    ["Thunar"],
+    [],  # TODO: figure out catch all for other windows
+    [],
+    [],
+    [],
+]
+
+
+def wm_class_matches(index):
+    return [Match(wm_class=j) for j in group_class_matches[index]]
+
+
+groups = [
+    Group(i, label=group_labels[int(i) - 1], matches=wm_class_matches(int(i) - 1))
+    for i in "123456789"
+]
+
 
 for i in groups:
     keys.extend(
