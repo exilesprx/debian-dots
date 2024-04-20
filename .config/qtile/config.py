@@ -28,7 +28,7 @@ import shutil
 import subprocess
 import os
 
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
@@ -96,13 +96,13 @@ keys = [
     ),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn("rofi -show run")),
 ]
 
 group_labels = ["", "", "", "", "", "", "", "", ""]
 group_class_matches = [
     ["Alacritty"],
-    ["Firefox", "Chrome", "Brave"],
+    ["firefox", "Chrome", "Brave"],
     ["Thunar"],
     [],  # TODO: figure out catch all for other windows
     [],
