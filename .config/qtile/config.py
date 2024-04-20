@@ -217,12 +217,6 @@ def init_widgets_list():
             filename=f"{home_dir}/.config/qtile/logo.png",
             background=colors[1],
             margin=3,
-            mouse_callbacks={
-                "Button1": lambda: qtile.cmd_spawn("j4-dmenu"),
-                "Button3": lambda: qtile.cmd_spawn(
-                    f"alacritty -e vim {home_dir}/.config/qtile/config.py"
-                ),
-            },
         ),
         widget.GroupBox(
             font=system_font,
