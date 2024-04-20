@@ -147,9 +147,9 @@ for i in groups:
 
 layout_theme = {
     "border_width": 3,
-    "margin": 10,
+    "margin": 5,
     "font": system_font,
-    "font_size": 12,
+    "font_size": 14,
     "border_focus": "#bd93f9",
     "border_normal": "#555555",
 }
@@ -186,7 +186,7 @@ layouts = [
 widget_defaults = dict(
     font=system_font,
     fontsize=12,
-    padding=3,
+    padding=2,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -216,11 +216,11 @@ def init_widgets_list():
         widget.Image(
             filename=f"{home_dir}/.config/qtile/logo.png",
             background=colors[1],
-            margin=3,
+            margin=5,
         ),
         widget.GroupBox(
             font=system_font,
-            fontsize=14,
+            fontsize=16,
             foreground=colors[2],
             background=colors[1],
             borderWidth=4,
@@ -229,37 +229,9 @@ def init_widgets_list():
             active=colors[4],
             inactive=colors[2],
         ),
-        widget.Sep(
-            size_percent=60,
-            margin=5,
-            linewidth=2,
-            background=colors[1],
-            foreground="#555555",
-        ),
-        widget.TextBox(
-            font=system_font,
-            fontsize=15,
-            text="",
-            foreground=colors[6],
-            background=colors[1],
-        ),
-        widget.Volume(foreground=colors[2], background=colors[1]),
         widget.Spacer(length=bar.STRETCH, background=colors[1]),
-        widget.TextBox(
-            font=system_font,
-            fontsize=15,
-            text=" 󰍹",
-            foreground=colors[3],
-            background=colors[1],
-        ),
-        widget.CurrentLayout(foreground=colors[2], background=colors[1]),
-        widget.Sep(
-            size_percent=60,
-            margin=5,
-            linewidth=2,
-            background=colors[1],
-            foreground="#555555",
-        ),
+        widget.WindowTabs(foreground=colors[7], background=colors[1]),
+        widget.Spacer(length=bar.STRETCH, background=colors[1]),
         widget.TextBox(
             font=system_font,
             fontsize=15,
@@ -272,7 +244,6 @@ def init_widgets_list():
             foreground=colors[2],
             background=colors[1],
             update_interval=2,
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{terminal} -e gtop")},
         ),
         widget.TextBox(
             font=system_font,
@@ -286,74 +257,7 @@ def init_widgets_list():
             foreground=colors[2],
             background=colors[1],
             update_interval=2,
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{terminal} -e gtop")},
         ),
-        widget.TextBox(
-            font=system_font,
-            fontsize=15,
-            text=" 󰋊",
-            foreground=colors[6],
-            background=colors[1],
-        ),
-        widget.GenPollText(
-            foreground=colors[2],
-            background=colors[1],
-            update_interval=500,
-            func=lambda: diskspace("FreeSpace"),
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(f"{terminal} -e gtop")},
-        ),
-        widget.Sep(
-            size_percent=60,
-            margin=5,
-            linewidth=2,
-            background=colors[1],
-            foreground="#555555",
-        ),
-        widget.TextBox(
-            font=system_font,
-            fontsize=15,
-            text=" ",
-            foreground=colors[4],
-            background=colors[1],
-        ),
-        widget.GenPollText(
-            foreground=colors[2],
-            background=colors[1],
-            update_interval=5,
-            func=lambda: subprocess.check_output(
-                f"{home_dir}/.config/qtile/scripts/num-installed-pkgs"
-            ).decode("utf-8"),
-        ),
-        widget.Spacer(length=bar.STRETCH, background=colors[1]),
-        widget.TextBox(
-            font=system_font,
-            fontsize=15,
-            text=" 󰈀",
-            foreground=colors[4],
-            background=colors[1],
-        ),
-        widget.Net(
-            format="{down} ↓↑ {up}",
-            foreground=colors[2],
-            background=colors[1],
-            update_interval=2,
-            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("def-nmdmenu")},
-        ),
-        widget.Sep(
-            size_percent=60,
-            margin=5,
-            linewidth=2,
-            background=colors[1],
-            foreground="#555555",
-        ),
-        widget.TextBox(
-            font=system_font,
-            fontsize=15,
-            text=" ",
-            foreground=colors[7],
-            background=colors[1],
-        ),
-        widget.Clock(format="%b %d-%Y", foreground=colors[2], background=colors[1]),
         widget.TextBox(
             font=system_font,
             fontsize=15,
@@ -361,7 +265,9 @@ def init_widgets_list():
             foreground=colors[7],
             background=colors[1],
         ),
-        widget.Clock(format="%I:%M %p", foreground=colors[2], background=colors[1]),
+        widget.Clock(
+            format="%I:%M %p %Y.%m.%d", foreground=colors[2], background=colors[1]
+        ),
         widget.Systray(background=colors[1]),
         widget.Spacer(length=5, background=colors[1]),
     ]
@@ -370,9 +276,7 @@ def init_widgets_list():
 
 screens = [
     Screen(
-        top=bar.Bar(
-            widgets=init_widgets_list(), size=35, opacity=0.9, margin=[5, 10, 0, 10]
-        ),
+        top=bar.Bar(widgets=init_widgets_list(), size=30),
     ),
 ]
 
