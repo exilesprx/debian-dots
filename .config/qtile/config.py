@@ -100,7 +100,7 @@ keys = [
     Key([mod], "r", lazy.spawn(menu)),
 ]
 
-group_labels = ["", "", "", "", "", "", "", "", ""]
+group_labels = ["", "", "", "", "", "", "", "", ""]
 group_class_matches = [
     ["Alacritty"],
     ["firefox", "Chrome", "Brave"],
@@ -147,7 +147,7 @@ for i in groups:
     )
 
 layout_theme = {
-    "border_width": 3,
+    "border_width": 2,
     "margin": 5,
     "font": system_font,
     "font_size": 14,
@@ -156,16 +156,16 @@ layout_theme = {
 }
 
 colors = [
-    ["#232a36", "#282a36"],
-    ["#282a36", "#282a36"],
-    ["#f8f8f2", "#f8f8f1"],
-    ["#ff5555", "#ff5555"],
-    ["#50fa7b", "#50fa7b"],
-    ["#f1fa8c", "#f1fa8c"],
-    ["#bd93f9", "#bd93f9"],
-    ["#ff79c6", "#ff79c6"],
-    ["#8be9fd", "#8be9fd"],
-    ["#bbbbbb", "#bbbbbb"],
+    ["#11111b", "#11111b"],  # mantle dark
+    ["#1e1e2e", "#1e1e2e"],  # base dark
+    ["#f5e0dc", "#f5e0dc"],  # rosewater
+    ["#f38ba8", "#f38ba8"],  # red
+    ["#a6e3a1", "#a6e3a1"],  # green
+    ["#f9e2af", "#f9e2af"],  # yellow
+    ["#b4befe", "#b4befe"],  # lavender
+    ["#f5c2e7", "#f5c2e7"],  # pink
+    ["#74c7ec", "#74c7ec"],  # sapphire
+    ["#cdd6f4", "#cdd6f4"],  # ghost
 ]
 
 layouts = [
@@ -186,7 +186,7 @@ layouts = [
 
 widget_defaults = dict(
     font=system_font,
-    fontsize=12,
+    fontsize=14,
     padding=2,
 )
 extension_defaults = widget_defaults.copy()
@@ -221,53 +221,53 @@ def init_widgets_list():
         ),
         widget.GroupBox(
             font=system_font,
-            fontsize=16,
+            fontsize=24,
             foreground=colors[2],
             background=colors[1],
             borderWidth=4,
-            hightlight_method="text",
+            highlight_method="text",
             this_current_screen_border=colors[6],
-            active=colors[4],
-            inactive=colors[2],
+            active=colors[5],
+            inactive=colors[9],
         ),
         widget.Spacer(length=bar.STRETCH, background=colors[1]),
-        widget.WindowTabs(foreground=colors[7], background=colors[1]),
+        widget.WindowTabs(foreground=colors[6], background=colors[1]),
         widget.Spacer(length=bar.STRETCH, background=colors[1]),
         widget.TextBox(
             font=system_font,
-            fontsize=15,
+            fontsize=24,
             text="󰻠",
-            foreground=colors[3],
+            foreground=colors[7],
             background=colors[1],
         ),
         widget.CPU(
             format="{load_percent}%",
-            foreground=colors[2],
+            foreground=colors[9],
             background=colors[1],
             update_interval=2,
         ),
         widget.TextBox(
             font=system_font,
-            fontsize=15,
+            fontsize=24,
             text=" ",
             foreground=colors[4],
             background=colors[1],
         ),
         widget.Memory(
             format="{MemUsed:.0f}{mm}",
-            foreground=colors[2],
+            foreground=colors[9],
             background=colors[1],
             update_interval=2,
         ),
         widget.TextBox(
             font=system_font,
-            fontsize=15,
+            fontsize=24,
             text=" 󰥔",
-            foreground=colors[7],
+            foreground=colors[8],
             background=colors[1],
         ),
         widget.Clock(
-            format="%I:%M %p %Y.%m.%d", foreground=colors[2], background=colors[1]
+            format="%d,%B %I:%M%p", foreground=colors[9], background=colors[1]
         ),
         widget.Systray(background=colors[1]),
         widget.Spacer(length=5, background=colors[1]),
