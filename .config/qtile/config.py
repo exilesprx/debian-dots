@@ -34,6 +34,7 @@ from libqtile.lazy import lazy
 
 mod = "mod4"
 terminal = "alacritty"
+menu = "rofi -show run"
 system_font = "IntoneMono Nerd Font Mono"
 home_dir = os.path.expanduser("~")
 
@@ -96,7 +97,7 @@ keys = [
     ),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawn("rofi -show run")),
+    Key([mod], "r", lazy.spawn(menu)),
 ]
 
 group_labels = ["", "", "", "", "", "", "", "", ""]
@@ -214,7 +215,7 @@ def init_widgets_list():
     widgets = [
         widget.Spacer(length=5, background=colors[1]),
         widget.Image(
-            filename=f"{home_dir}/.config/qtile/logo.png",
+            filename=f"{home_dir}/.config/qtile/logos/logo",
             background=colors[1],
             margin=5,
         ),
@@ -277,7 +278,13 @@ def init_widgets_list():
 screens = [
     Screen(
         top=bar.Bar(widgets=init_widgets_list(), size=30),
+        wallpaper=f"{home_dir}/.config/qtile/wallpapers/primary",
     ),
+    Screen(
+        top=bar.Bar(widgets=init_widgets_list(), size=30),
+        wallpaper=f"{home_dir}/.config/qtile/wallpapers/secondary",
+    ),
+    # Add more screens if needed
 ]
 
 # Drag floating layouts.
