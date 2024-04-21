@@ -109,6 +109,8 @@ group_class_matches = [
     [],
     [],
     [],
+    [],
+    [],
 ]
 
 
@@ -151,8 +153,8 @@ layout_theme = {
     "margin": 5,
     "font": system_font,
     "font_size": 14,
-    "border_focus": "#bd93f9",
-    "border_normal": "#555555",
+    "border_focus": "#f5e0dc",
+    "border_normal": "#1e1e2e",
 }
 
 colors = [
@@ -226,7 +228,7 @@ def init_widgets_list():
             background=colors[1],
             borderWidth=4,
             highlight_method="text",
-            this_current_screen_border=colors[6],
+            this_current_screen_border=colors[8],
             active=colors[5],
             inactive=colors[9],
         ),
@@ -263,7 +265,7 @@ def init_widgets_list():
             font=system_font,
             fontsize=24,
             text=" 󰥔",
-            foreground=colors[8],
+            foreground=colors[6],
             background=colors[1],
         ),
         widget.Clock(
