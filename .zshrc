@@ -7,6 +7,7 @@ alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cat='batcat'
 alias git-curb='git rev-parse --abbrev-ref HEAD'
 alias cat='batcat'
+alias tmux='TERM=xterm-256color tmux'
 
 # Exports
 export TERM="xterm-256color"
