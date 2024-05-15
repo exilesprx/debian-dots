@@ -26,7 +26,6 @@ return {
       phpcs = {
         args = {
           "--rules=@PSR12,ordered_imports",
-          "--no-interaction",
           "fix",
           "$FILENAME",
         },
