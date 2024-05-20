@@ -1,18 +1,28 @@
 return {
-  { "nvim-neotest/neotest-plenary" },
-  "nvim-neotest/neotest",
-  dependencies = {
-    "lawrence-laz/neotest-zig",
-    "mrcjkb/neotest-haskell",
-    "olimorris/neotest-phpunit",
+  {
+    "nvim-neotest/neotest-plenary",
   },
-  opts = {
-    adapters = {
-      "neotest-plenary",
-      "neotest-zig",
-      "neotest-python",
-      "neotest-haskell",
-      "neotest-phpunit",
+  {
+    "nvim-neotest/nvim-nio",
+  },
+  {
+    "lawrence-laz/neotest-zig",
+  },
+  {
+    "mrcjkb/neotest-haskell",
+  },
+  {
+    "nvim-neotest/neotest-python",
+  },
+  {
+    "nvim-neotest/neotest",
+    opts = {
+      adapters = {
+        "neotest-plenary",
+        "neotest-zig",
+        "neotest-haskell",
+        "neotest-python",
+      },
     },
   },
 }
