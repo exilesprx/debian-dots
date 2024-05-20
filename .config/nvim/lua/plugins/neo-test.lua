@@ -21,7 +21,9 @@ return {
         "neotest-plenary",
         "neotest-zig",
         "neotest-haskell",
-        "neotest-python",
+        ["neotest-python"] = {
+          runner = "pytest",
+        },
       },
     },
   },
