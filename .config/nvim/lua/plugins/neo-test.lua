@@ -1,10 +1,13 @@
 return {
   "nvim-neotest/neotest",
   dependencies = {
+    "nvim-neotest/nvim-nio",
+    "nvim-lua/plenary.nvim",
+    "antoinemadec/FixCursorHold.nvim",
+    "nvim-treesitter/nvim-treesitter",
     "lawrence-laz/neotest-zig",
     "mrcjkb/neotest-haskell",
     "olimorris/neotest-phpunit",
-    "nvim-treesitter/nvim-treesitter",
   },
   config = function()
     require("neotest").setup({
