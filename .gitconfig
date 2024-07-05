@@ -15,5 +15,6 @@
 [safe]
 	directory = /mnt/storage/code/wemod
 [alias]
-  undo = git reset --soft HEAD^
+  undo = reset --soft HEAD^
   cb = rev-parse --abbrev-ref HEAD
+  rom = rebase -i origin/main
