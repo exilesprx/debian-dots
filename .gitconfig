@@ -1,0 +1,19 @@
+[init]
+	defaultBranch = main
+[user]
+	email = exiles.prx@gmail.com
+	name = Exiles.prx
+	signingkey = /home/acampbell/.ssh/id_ed25519.pub
+[core]
+	editor = nvim
+[rerere]
+	enabled = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[safe]
+	directory = /mnt/storage/code/wemod
+[alias]
+  undo = git reset --soft HEAD^
+  cb = rev-parse --abbrev-ref HEAD
