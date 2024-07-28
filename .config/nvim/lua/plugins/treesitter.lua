@@ -17,6 +17,7 @@ return {
         "php",
         "python",
         "typescript",
+        "sql",
         "vim",
         "vue",
         "yaml",
