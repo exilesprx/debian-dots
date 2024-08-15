@@ -13,7 +13,6 @@ return {
       ["lua"] = { "stylua" },
       ["markdown"] = { "prettier" },
       ["php"] = { "phpcs" },
-      ["python"] = { "black" },
       ["typescript"] = { "prettier" },
       ["sh"] = { "shfmt" },
       ["vue"] = { "prettier" },
