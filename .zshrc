@@ -14,6 +14,13 @@ export VISUAL="kate"
 export MANPAGER="nvim +Man!"
 export ZIM_HOME="$HOME/.zim"
 
+# fnm
+FNM_PATH="/home/acampbell/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/acampbell/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
 # Ghcup
 if [ -f "$HOME/.ghcup/env" ]; then
   source "$HOME/.ghcup/env" # ghcup-env
@@ -27,10 +34,6 @@ HISTFILE=~/.zsh_history
 # Key binds
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-
-# Nodejs
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Starship
 if [ -f /usr/local/bin/starship ]; then
