@@ -215,12 +215,6 @@ def diskspace(mode):
 
 def init_widgets_list():
     widgets = [
-        widget.Spacer(length=5, background=colors[1]),
-        widget.Image(
-            filename=f"{home_dir}/.config/qtile/logos/logo",
-            background=colors[1],
-            margin=5,
-        ),
         widget.GroupBox(
             font=system_font,
             fontsize=24,
