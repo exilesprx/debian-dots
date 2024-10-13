@@ -27,6 +27,14 @@ if [ -f "$HOME/.ghcup/env" ]; then
   source "$HOME/.ghcup/env" # ghcup-env
 fi
 
+if [ -d /opt/goenv ]; then
+  export GOENV_ROOT="/opt/goenv"
+  PATH="$GOENV_ROOT/bin:$PATH"
+  eval "$(goenv init -)"
+  PATH="$GOROOT/bin:$PATH"
+  PATH="$PATH:$GOPATH/bin"
+fi
+
 # Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=5000
 SAVEHIST=5000
