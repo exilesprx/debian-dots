@@ -37,6 +37,7 @@ terminal = "alacritty"
 menu = "rofi -show run"
 system_font = "IntoneMono Nerd Font Mono"
 home_dir = os.path.expanduser("~")
+logo = ""
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -100,7 +101,7 @@ keys = [
     Key([mod], "r", lazy.spawn(menu)),
 ]
 
-group_labels = ["", "", "", "", "", "", "", "", ""]
+group_labels = ["", "", "", "", "", "", "", "", ""]
 group_class_matches = [
     ["Alacritty"],
     ["firefox", "Chrome", "Brave"],
@@ -215,6 +216,13 @@ def diskspace(mode):
 
 def init_widgets_list():
     widgets = [
+        widget.TextBox(
+            font=system_font,
+            fontsize=24,
+            text=logo,
+            foreground=colors[7],
+            background=colors[1],
+        ),
         widget.GroupBox(
             font=system_font,
             fontsize=24,
