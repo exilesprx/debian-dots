@@ -231,7 +231,7 @@ def init_widgets_list():
         ),
         widget.GroupBox(
             font=system_font,
-            fontsize=24,
+            fontsize=18,
             foreground=colors[2],
             background=colors[1],
             borderWidth=4,
