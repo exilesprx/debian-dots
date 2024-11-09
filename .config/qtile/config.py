@@ -222,6 +222,7 @@ def init_widgets_list():
             text=logo,
             foreground=colors[7],
             background=colors[1],
+            mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(menu)},
         ),
         widget.GroupBox(
             font=system_font,
