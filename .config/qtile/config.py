@@ -101,7 +101,7 @@ keys = [
     Key([mod], "r", lazy.spawn(menu)),
 ]
 
-group_labels = ["", "", "", "", "", "", "", "", ""]
+group_labels = ["", "", "", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰"]
 group_class_matches = [
     ["Alacritty"],
     ["firefox", "Chrome", "Brave"],
@@ -219,8 +219,9 @@ def init_widgets_list():
         widget.TextBox(
             font=system_font,
             fontsize=24,
+            padding=12,
             text=logo,
-            foreground=colors[7],
+            foreground=colors[9],
             background=colors[1],
             mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(menu)},
         ),
