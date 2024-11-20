@@ -13,7 +13,7 @@
 [commit]
 	gpgsign = true
 [safe]
-	directory = /mnt/storage/code/wemod
+	directory = /mnt/storage/code
 [alias]
   cb = rev-parse --abbrev-ref HEAD
   ft = fetch --tags
