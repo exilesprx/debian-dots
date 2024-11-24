@@ -17,5 +17,6 @@
 [alias]
   cb = rev-parse --abbrev-ref HEAD
   ft = fetch --tags
+  pfwl = push --force-with-lease
   rom = rebase -i origin/main
   undo = reset --soft HEAD^
