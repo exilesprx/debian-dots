@@ -6,6 +6,10 @@
 	signingkey = /home/acampbell/.ssh/id_ed25519.pub
 [core]
 	editor = nvim
+[merge]
+  tool = lazygit
+[mergetool "lazygit"]
+  cmd = lazygit
 [rerere]
 	enabled = true
 [gpg]
