@@ -90,3 +90,8 @@ path=('/home/acampbell/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+# Lua
+if [ -d "$HOME/.luarocks" ]; then
+  export PATH="$HOME/.luarocks/bin:$PATH"
+fi
