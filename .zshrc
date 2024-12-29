@@ -5,7 +5,6 @@ alias grep='grep --color=auto'
 alias vim='nvim'
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cat='batcat'
-alias cat='batcat'
 
 # Exports
 export TERM="xterm-256color"
