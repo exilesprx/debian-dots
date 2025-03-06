@@ -1,26 +1,33 @@
-[init]
-	defaultBranch = main
-[user]
-	email = exiles.prx@gmail.com
-	name = Exiles.prx
-	signingkey = /home/acampbell/.ssh/id_ed25519.pub
-[core]
-	editor = nvim
-[merge]
-  tool = lazygit
-[mergetool "lazygit"]
-  cmd = lazygit
-[rerere]
-	enabled = true
-[gpg]
-	format = ssh
-[commit]
-	gpgsign = true
-[safe]
-	directory = /mnt/storage/code
 [alias]
   cb = rev-parse --abbrev-ref HEAD
   ft = fetch --tags
   pfwl = push --force-with-lease
   rom = rebase -i origin/main
   undo = reset --soft HEAD^
+[commit]
+  gpgsign = true
+[core]
+  editor = nvim
+  pager = delta
+[delta]
+  navigate = true
+  dark = true
+  side-by-side = true
+[gpg]
+  format = ssh
+[init]
+  defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  tool = lazygit
+[mergetool "lazygit"]
+  cmd = lazygit
+[rerere]
+  enabled = true
+[safe]
+  directory = /mnt/storage/code
+[user]
+  email = exiles.prx@gmail.com
+  name = Exiles.prx
+  signingkey = /home/acampbell/.ssh/id_ed25519.pub
