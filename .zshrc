@@ -1,3 +1,12 @@
+# Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=5000
+SAVEHIST=5000
+HISTFILE=~/.zsh_history
+
+# Key binds
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 # Aliases
 alias ls='lsd'
 alias ll='lsd -lah'
@@ -6,6 +15,7 @@ alias vim='nvim'
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cat='batcat'
 alias zel='zellij'
+alias cd='z'
 
 # Exports
 export TERM="xterm-256color"
@@ -38,17 +48,8 @@ if [ -d /opt/goenv ]; then
   export PATH="$PATH:$GOPATH/bin"
 fi
 
-# Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=5000
-SAVEHIST=5000
-HISTFILE=~/.zsh_history
-
-# Key binds
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
 # Starship
-if [ -f /usr/local/bin/starship ]; then
+if [ -f "$HOME/.cargo/bin/starship" ]; then
   eval "$(starship init zsh)"
 fi
 
