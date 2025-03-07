@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# Aliases
+alias ls='lsd'
+alias ll='lsd -lah'
+alias grep='grep --color=auto'
+alias vim='nvim'
+alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cat='batcat'
+alias zel='zellij'
+alias cd='z'
+alias grep='rg'

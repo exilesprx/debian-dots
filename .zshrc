@@ -7,23 +7,8 @@ HISTFILE=~/.zsh_history
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-# Aliases
-alias ls='lsd'
-alias ll='lsd -lah'
-alias grep='grep --color=auto'
-alias vim='nvim'
-alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias cat='batcat'
-alias zel='zellij'
-alias cd='z'
-
-# Exports
-export TERM="xterm-256color"
-export EDITOR="nvim"
-export VISUAL="kate"
-export MANPAGER="nvim +Man!"
-export ZIM_HOME="$HOME/.zim"
-export LS_COLORS="di=38;5;146:fi=38;5;245:ln=38;5;141:pi=38;5;223:so=38;5;167:bd=38;5;167:cd=38;5;167:or=38;5;174:ow=38;5;109:st=38;5;245:su=38;5;167:sg=38;5;142:tw=38;5;109:ex=38;5;215"
+[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
+[ -f "$HOME/.zsh_exports" ] && source "$HOME/.zsh_exports"
 
 # cargo/rust
 if [ -d "$HOME/.cargo/bin" ]; then
