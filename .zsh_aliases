@@ -4,7 +4,6 @@
 alias ls='eza --icons=always --color=always'
 alias ll='eza --icons=always --color=always -la'
 alias l='eza --icons=always --color=always -l'
-alias grep='grep --color=auto'
 alias vim='nvim'
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cat='bat'
