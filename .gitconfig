@@ -10,11 +10,13 @@
   editor = nvim
   pager = delta
 [delta]
+  features = catppuccin-mocha
   navigate = true
-  dark = true
   side-by-side = true
 [gpg]
   format = ssh
+[include]
+  path = ~/.config/delta/themes/catppuccin.gitconfig
 [init]
   defaultBranch = main
 [interactive]
