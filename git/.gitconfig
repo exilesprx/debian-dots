@@ -4,6 +4,7 @@
   pfwl = push --force-with-lease
   rom = rebase -i origin/main
   undo = reset --soft HEAD^
+  tagsort = "!git tag | tr '-' '~' | sort -V | tr '~' '-'"
 [commit]
   gpgsign = true
 [core]
