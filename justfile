@@ -19,7 +19,7 @@ unstow-all:
   done
 
 [confirm('Do you want to restow all the files? y/n')]
-unstow-all:
+restow-all:
   @for dir in $(find . -mindepth 1 -maxdepth 1 -type d ! -name ".git"); do \
     stow -v --restow --target={{TARGET_DIR}} $(basename "$dir"); \
   done
