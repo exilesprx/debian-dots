@@ -12,13 +12,13 @@ stow-all:
     stow -v --target={{TARGET_DIR}} $(basename "$dir"); \
   done
 
-[confirm('Do you want to delete all the files? y/n')]
+[confirm('Are you sure you want to delete all the files? y/n')]
 unstow-all:
   @for dir in $(find . -mindepth 1 -maxdepth 1 -type d ! -name ".git"); do \
     stow -v --delete --target={{TARGET_DIR}} $(basename "$dir"); \
   done
 
-[confirm('Do you want to restow all the files? y/n')]
+[confirm('Are you sure you want to restow all the files? y/n')]
 restow-all:
   @for dir in $(find . -mindepth 1 -maxdepth 1 -type d ! -name ".git"); do \
     stow -v --restow --target={{TARGET_DIR}} $(basename "$dir"); \
