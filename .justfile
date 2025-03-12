@@ -36,3 +36,6 @@ stow package:
 [confirm('Are you sure you want to unstow the package? y/n')]
 unstow package:
   stow -v --delete --target={{target}} {{package}}
+
+enable-via:
+  stow -v --adopt --target=/etc/udev/rules.d via
