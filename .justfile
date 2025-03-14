@@ -38,4 +38,7 @@ unstow package:
   stow -v --delete --target={{target}} {{package}}
 
 enable-via:
+  [ "$(id -u)" -eq 0 ] || { echo "Must be run as root"; exit 1; }
   stow -v --adopt --target=/etc/udev/rules.d via
+  udevadm control --reload-rules
+  udevadm trigger
