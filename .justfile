@@ -37,8 +37,16 @@ stow package:
 unstow package:
   stow -v --delete --target={{target}} {{package}}
 
+# Via doesn't work with a symlink, so copy the file
+# to the udev rules directory
 enable-via:
   [ "$(id -u)" -eq 0 ] || { echo "Must be run as root"; exit 1; }
-  stow -v --adopt --target=/etc/udev/rules.d via
+  cp via/99-via.rules /etc/udev/rules.d/99-via.rules
+  udevadm control --reload-rules
+  udevadm trigger
+
+disable-via:
+  [ "$(id -u)" -eq 0 ] || { echo "Must be run as root"; exit 1; }
+  rm /etc/udev/rules.d/99-via.rules
   udevadm control --reload-rules
   udevadm trigger
