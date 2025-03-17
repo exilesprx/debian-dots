@@ -2,6 +2,7 @@
 HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.zsh_history
+setopt sharehistory histignorealldups
 
 # Key binds
 bindkey "^[[1;5C" forward-word
