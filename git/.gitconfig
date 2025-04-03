@@ -2,6 +2,7 @@
   cb = rev-parse --abbrev-ref HEAD
   ft = fetch --tags
   pfwl = push --force-with-lease
+  pseudo-version = "!sh -c 'echo $(date -u -d \"$(git log -n 1 --pretty=format:%cI)\" +\"%Y%m%d%H%M%S\")-$(git rev-parse --short=12 HEAD)'"
   rom = rebase -i origin/main
   undo = reset --soft HEAD^
   tagsort = "!git tag | tr '-' '~' | sort -V | tr '~' '-'"
