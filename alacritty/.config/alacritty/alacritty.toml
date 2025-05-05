@@ -1,0 +1,10 @@
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+blur = true
+opacity = 0.9
+
+[general]
+import = ["/home/acampbell/.config/alacritty/font.toml", "/home/acampbell/.config/alacritty/catppuccin-mocha.toml"]
