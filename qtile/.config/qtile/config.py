@@ -47,8 +47,7 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(),
-        desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key(
@@ -64,8 +63,7 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(),
-        desc="Grow window to the left"),
+    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
     Key(
         [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
     ),
@@ -122,8 +120,7 @@ def wm_class_matches(index):
 
 
 groups = [
-    Group(i, label=group_labels[int(i) - 1],
-          matches=wm_class_matches(int(i) - 1))
+    Group(i, label=group_labels[int(i) - 1], matches=wm_class_matches(int(i) - 1))
     for i in "123456789"
 ]
 
@@ -143,8 +140,7 @@ for i in groups:
                 [mod, "shift"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(
-                    i.name),
+                desc="Switch to & move focused window to group {}".format(i.name),
             ),
             # Or, use below if you prefer not to switch to that group.
             # # mod1 + shift + letter of group = move focused window to group
@@ -314,8 +310,7 @@ mouse = [
 
 @hook.subscribe.startup_once
 def autostart():
-    start = os.path.expanduser(
-        f"{home_dir}/.config/qtile/scripts/autostart.sh")
+    start = os.path.expanduser(f"{home_dir}/.config/qtile/scripts/autostart.sh")
     subprocess.call([start])
 
 
